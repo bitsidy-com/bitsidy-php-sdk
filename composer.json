@@ -1,0 +1,21 @@
+{
+    "name": "bitsidy/bitsidy-sdk",
+    "description": "A PHP SDK for the Bitsidy API service.",
+    "type": "library",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bitsidy\\BitsidySDK\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bitsidy",
+            "email": "support@bitsidy.com"
+        }
+    ],
+    "license": "GPL-3.0-or-later",
+    "minimum-stability": "stable"
+}
