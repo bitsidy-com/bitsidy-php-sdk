@@ -15,15 +15,13 @@ class BitsidySDK
 
     private function encryptData($data)
     {
-        $iv = '';
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        for ($i = 0; $i < 16; $i++) {
-            $iv .= $characters[rand(0, strlen($characters) - 1)];
-        }
-
-        $data = $iv . utf8_encode(json_encode($data));
-        return urlencode(openssl_encrypt($data, 'aes-256-cbc', $this->apiKey, 0, $iv));
+        $iv = openssl_random_pseudo_bytes(16);
+        $encodedData = utf8_encode(json_encode($data));
+        $encryptedData = openssl_encrypt($encodedData, 'aes-256-cbc', $this->apiKey, OPENSSL_RAW_DATA, $iv);
+        $ivAndEncryptedData = base64_encode($iv . $encryptedData);
+        return urlencode($ivAndEncryptedData);
     }
+
 
     private function decryptData($data)
     {
