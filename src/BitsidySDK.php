@@ -62,4 +62,9 @@ class BitsidySDK
 
         return $this->decryptData($jsonResponse['data']);
     }
+
+    public function getCallbackContent($encryptedData)
+    {
+        return $this->decryptData($encryptedData);
+    }
 }

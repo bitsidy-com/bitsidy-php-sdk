@@ -5,6 +5,7 @@ Bitsidy SDK is a toolkit for integrating Bitsidy's cryptocurrency invoice servic
 ## Project Structure
 - `src/BitsidySDK.php`: The core SDK file.
 - `examples/example.php`: An example script demonstrating SDK usage.
+- `examples/callback.php`: An example script demonstrating how to handle received callback data.
 - `include.php`: For manual inclusion in projects.
 - `composer.json`: Composer configuration file.
 
@@ -30,7 +31,7 @@ require_once 'include.php';
 ```
 
 ## Usage
-Refer to examples/example.php for a usage example. This script demonstrates how to create an invoice and handle responses using the Bitsidy SDK.
+Refer to examples/example.php for a practical demonstration on using the Bitsidy SDK to create invoices and handle responses. For understanding how our server communicates invoice status updates, consult examples/callback.php.
 
 ## Contributing
 Contributions to the Bitsidy SDK are welcome. Please ensure that your code adheres to the project's coding standards and include tests for new features or bug fixes.
